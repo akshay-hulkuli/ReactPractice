@@ -25,6 +25,9 @@ export default function Header() {
         case 'lifecycle': 
             navigate('/lifecycle');
             break;
+        case 'hook': 
+            navigate('/hooks');
+            break;
       }
     }
     return (
@@ -34,6 +37,7 @@ export default function Header() {
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('states')}>states</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('props')}>props</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('lifecycle')}>lifecycle</Button></Item>
+                <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('hook')}>hooks</Button></Item>
             </Stack>
         </div>
     )
