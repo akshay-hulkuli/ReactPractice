@@ -22,6 +22,9 @@ export default function Header() {
         case 'props': 
             navigate('/props');
             break;
+        case 'lifecycle': 
+            navigate('/lifecycle');
+            break;
       }
     }
     return (
@@ -30,6 +33,7 @@ export default function Header() {
              <Stack direction="row" spacing={2}>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('states')}>states</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('props')}>props</Button></Item>
+                <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('lifecycle')}>lifecycle</Button></Item>
             </Stack>
         </div>
     )
