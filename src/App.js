@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import StatesDemo from './components/states/StatesDemo';
+import PropsDemo from './components/props/PropsDemo';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Router>
           <Routes>
               <Route exact path='/' element={<StatesDemo/>}/>
+              <Route exact path='/props' element={<PropsDemo/>}/>
           </Routes>
       </Router>
     </div>
