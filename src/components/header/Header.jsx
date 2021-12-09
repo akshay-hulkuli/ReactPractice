@@ -31,6 +31,9 @@ export default function Header() {
         case 'portals': 
             navigate('/portals');
             break;
+        case 'hoc': 
+            navigate('/hoc');
+            break;
       }
     }
     return (
@@ -42,6 +45,7 @@ export default function Header() {
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('lifecycle')}>lifecycle</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('hook')}>hooks</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('portals')}>portals</Button></Item>
+                <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('hoc')}>hoc</Button></Item>
             </Stack>
         </div>
     )
