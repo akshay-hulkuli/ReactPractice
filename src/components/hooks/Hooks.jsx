@@ -4,6 +4,8 @@ import Header from '../header/Header'
 import './hooks.scss'
 import { ThemeContext } from '../..';
 
+import {Fragment, useRef} from 'react';
+
 export default function Hooks() {
     
     return (
@@ -14,6 +16,7 @@ export default function Hooks() {
                     <UseStateDemo/>
                     <UseEffectDemo/>
                     <UseContextDemo/>
+                    <UseRefDemo />
                 </div>    
             </div>
         </React.Fragment>
@@ -92,3 +95,29 @@ function UseContextDemo() {
         </div>
     );
 }
+
+
+function UseRefDemo() {
+ 
+    // Creating a ref object using useRef hook
+    const focusPoint = useRef(null);
+    const onClickHandler = () => {
+      focusPoint.current.value =
+        "The quick brown fox jumps over the lazy dog";
+        focusPoint.current.focus();
+    };
+    return (
+      <div className="hook">
+        <div>
+          <Button onClick={onClickHandler} variant="contained" color="secondary">
+           AutoFill
+          </Button>
+        </div>
+        <p>
+         Click on the action button to
+         focus and populate the text.
+        </p>
+        <textarea ref={focusPoint} id="textarea"/>
+      </div>
+    );
+  };
