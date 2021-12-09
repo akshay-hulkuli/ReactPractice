@@ -4,10 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const themes = {
+  light: {
+    foreground: "#000000",
+    background: "#eeeeee"
+  },
+  dark: {
+    foreground: "#ffffff",
+    background: "#222222"
+  }
+};
+
+export const ThemeContext = React.createContext(themes.light);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeContext.Provider value = {themes}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ThemeContext.Provider>,
   document.getElementById('root')
 );
 
