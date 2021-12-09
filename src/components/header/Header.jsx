@@ -28,6 +28,9 @@ export default function Header() {
         case 'hook': 
             navigate('/hooks');
             break;
+        case 'portals': 
+            navigate('/portals');
+            break;
       }
     }
     return (
@@ -38,6 +41,7 @@ export default function Header() {
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('props')}>props</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('lifecycle')}>lifecycle</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('hook')}>hooks</Button></Item>
+                <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('portals')}>portals</Button></Item>
             </Stack>
         </div>
     )
