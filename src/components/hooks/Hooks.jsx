@@ -2,8 +2,10 @@ import { Button, Stack } from '@mui/material';
 import React from 'react'
 import Header from '../header/Header'
 import './hooks.scss'
+import { ThemeContext } from '../..';
 
 export default function Hooks() {
+    
     return (
         <React.Fragment>
             <Header/>
@@ -11,6 +13,7 @@ export default function Hooks() {
                 <div >
                     <UseStateDemo/>
                     <UseEffectDemo/>
+                    <UseContextDemo/>
                 </div>    
             </div>
         </React.Fragment>
@@ -61,4 +64,31 @@ function UseEffectDemo() {
             <p>check the console, useEffect is triggered when conter changes.</p>
         </div>
     )
+}
+
+
+function UseContextDemo() {
+    const theme = React.useContext(ThemeContext);
+    const [foreground, setforeground] = React.useState(theme.light.foreground);
+    const [background, setBackgrond] = React.useState(theme.light.background); 
+
+    const changeToDark = () => {
+        setforeground(theme.dark.foreground);
+        setBackgrond(theme.dark.background);
+    }
+
+    const changeToLight = () => {
+        setforeground(theme.light.foreground);
+        setBackgrond(theme.light.background);
+    }
+    return(
+        <div style={{color:foreground, backgroundColor:background, textAlign:'center', padding:'30px'}}>
+            <h2>this is useContext demo</h2>
+            <p>the theme is provided in the top most hierarchy. and is available everywhere now</p>
+            <div className="buttons">
+                <Button onClick={changeToDark} variant="contained" color="secondary" sx={{margin:'10px'}}>DarkTheme</Button>
+                <Button onClick={changeToLight} variant="contained" color="secondary" sx={{margin:'10px'}}>LightTheme</Button>
+            </div>
+        </div>
+    );
 }
