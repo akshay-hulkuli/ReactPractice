@@ -34,6 +34,9 @@ export default function Header() {
         case 'hoc': 
             navigate('/hoc');
             break;
+        case 'flux': 
+            navigate('/flux');
+            break;
       }
     }
     return (
@@ -46,6 +49,7 @@ export default function Header() {
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('hook')}>hooks</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('portals')}>portals</Button></Item>
                 <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('hoc')}>hoc</Button></Item>
+                <Item><Button sx={{color:'#180669'}} onClick={()=>navigateTo('flux')}>react-flux</Button></Item>
             </Stack>
         </div>
     )
