@@ -6,6 +6,7 @@ import LifeCycle from './components/lifecycle/LifeCycle';
 import Hooks from './components/hooks/Hooks';
 import Portals from './components/portals/Portals';
 import HOCDemo from './components/hoc/HOCDemo';
+import FluxDemo from './components/flux/FluxDemo';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Route exact path='/hooks' element={<Hooks/>}/>
               <Route exact path='/portals' element={<Portals/>}/>
               <Route exact path='/hoc' element={<HOCDemo/>}/>
+              <Route exact path='/flux' element={<FluxDemo/>}/>
           </Routes>
       </Router>
     </div>
